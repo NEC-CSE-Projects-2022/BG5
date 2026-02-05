@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Accuracy - BreastCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f4f7fb, #e8ecf7);
+      color: #1e3a8a;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 5rem 8%;
+      position: relative;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://svgshare.com/i/15Rn.svg') no-repeat bottom;
+      background-size: cover;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+      z-index: 2;
+    }
+
+    .text h1 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+
+    .text p {
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .sub-tech {
+      margin-top: 1rem;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .image img {
+      width: 90%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 3rem auto;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #1e3a8a;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #1e3a8a, #2563eb);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+
+    <button class="navbar-toggle" id="navbarToggle">&#9776;</button>
+
+    <ul class="navbar-links" id="navbarLinks">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- High Accuracy Section -->
+  <section class="section">
+    <div class="text">
+      <h1>High Accuracy</h1>
+      <p>
+        Our AI models are trained using deep learning techniques on thousands of annotated breast ultrasound 
+        and mammogram images. This ensures diagnostic accuracy that rivals or exceeds human experts, 
+        detecting even subtle abnormalities early.
+      </p>
+      <p class="sub-tech">🔹 Technologies Used: CNN, U-Net++, Transfer Learning (ResNet50), Ensemble Voting</p>
+      <p>
+        Through intelligent segmentation and feature extraction, the model achieves consistent and interpretable predictions, 
+        minimizing false negatives and improving confidence for clinicians.
+      </p>
+    </div>
+    <div class="image">
+      <img src="{{ url_for('static', filename='images/gem1.png') }}" alt="High accuracy AI Model">
+    </div>
+  </section>
+
+  <div style="text-align:center;">
+    <a href="{{ url_for('features_page') }}" class="back-btn">← Back to Features</a>
+  </div>
+
+  <footer>© 2025 BreastCare — AI-powered Breast Cancer Detection System</footer>
+
+  <script>
+    // Mobile navbar toggle
+    const toggleBtn = document.getElementById("navbarToggle");
+    const links = document.getElementById("navbarLinks");
+    let isOpen = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      links.classList.toggle("show");
+      toggleBtn.innerHTML = isOpen ? "&times;" : "&#9776;";
+    });
+  </script>
+</body>
+</html>
