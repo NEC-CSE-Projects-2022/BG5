@@ -1,23 +1,20 @@
 
-# Team Number – Project Title
+# BG5 - Ultrasound-Based Breast Cancer Detection Using a Segmentation-Guided Deep Learning Framework
 
 ## Team Info
-- 22471A05XX — **Name** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
-_Work Done: xxxxxxxxxx_
+- 22471A0573 — **Chandana Priya Badina** ( [LinkedIn](https://www.linkedin.com/in/chandana-priya-badina-827b97276/) )
+_Work Done: Model training, evaluation, preprocessing_
 
-- 22471A05XX — **Name** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
-_Work Done: xxxxxxxxxx_
+- 22471A0574 — **Srilakshmi Bandi** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+_Work Done: documentation, Dataset preparation_
 
-- 22471A05XX — **Name** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
-_Work Done: xxxxxxxxxx_
-
-- 22471A05XX — **Name** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
-_Work Done: xxxxxxxxxx_
+- 22471A05A2 — **Sri Varsha Kolisetty** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+_Work Done: Research analysis, testing_
 
 ---
 
 ## Abstract
-xxxxxxxxxx
+Breast cancer remains a major health concern where early and accurate diagnosis is critical for effective treatment. This project presents an AI-based breast cancer detection system that uses ultrasound images and a segmentation-guided deep learning framework to classify tumors as benign or malignant. By combining precise tumor localization with domain-aware diagnostic guidance, the system enhances interpretability and clinical relevance. Acting as a digital decision-support tool, the proposed approach assists clinicians and medical learners in improving diagnostic accuracy, especially in resource-limited healthcare settings.
 
 ---
 
