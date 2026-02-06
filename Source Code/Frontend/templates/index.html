@@ -1,0 +1,3192 @@
+<!-- Navbar.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>High Accuracy - BreastCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #f4f7fb, #e8ecf7);
+      color: #1e3a8a;
+    }
+
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 5rem 8%;
+      position: relative;
+    }
+
+    .section::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 150px;
+      background: url('https://svgshare.com/i/15Rn.svg') no-repeat bottom;
+      background-size: cover;
+    }
+
+    .text {
+      flex: 1;
+      min-width: 300px;
+      padding-right: 2rem;
+      z-index: 2;
+    }
+
+    .text h1 {
+      font-size: 2.5rem;
+      color: #1e3a8a;
+      margin-bottom: 1rem;
+    }
+
+    .text p {
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .sub-tech {
+      margin-top: 1rem;
+      color: #2563eb;
+      font-weight: 500;
+    }
+
+    .image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+    }
+
+    .image img {
+      width: 90%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin: 3rem auto;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .back-btn:hover {
+      background: #1e3a8a;
+    }
+
+    footer {
+      background: linear-gradient(90deg, #1e3a8a, #2563eb);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+
+    <button class="navbar-toggle" id="navbarToggle">&#9776;</button>
+
+    <ul class="navbar-links" id="navbarLinks">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- High Accuracy Section -->
+  <section class="section">
+    <div class="text">
+      <h1>High Accuracy</h1>
+      <p>
+        Our AI models are trained using deep learning techniques on thousands of annotated breast ultrasound 
+        and mammogram images. This ensures diagnostic accuracy that rivals or exceeds human experts, 
+        detecting even subtle abnormalities early.
+      </p>
+      <p class="sub-tech">🔹 Technologies Used: CNN, U-Net++, Transfer Learning (ResNet50), Ensemble Voting</p>
+      <p>
+        Through intelligent segmentation and feature extraction, the model achieves consistent and interpretable predictions, 
+        minimizing false negatives and improving confidence for clinicians.
+      </p>
+    </div>
+    <div class="image">
+      <img src="{{ url_for('static', filename='images/gem1.png') }}" alt="High accuracy AI Model">
+    </div>
+  </section>
+
+  <div style="text-align:center;">
+    <a href="{{ url_for('features_page') }}" class="back-btn">← Back to Features</a>
+  </div>
+
+  <footer>© 2025 BreastCare — AI-powered Breast Cancer Detection System</footer>
+
+  <script>
+    // Mobile navbar toggle
+    const toggleBtn = document.getElementById("navbarToggle");
+    const links = document.getElementById("navbarLinks");
+    let isOpen = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      links.classList.toggle("show");
+      toggleBtn.innerHTML = isOpen ? "&times;" : "&#9776;";
+    });
+  </script>
+</body>
+</html>
+
+
+<!-- Home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Breast Cancer Detection</title>
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='Home.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='icon.png') }}">
+</head>
+
+<body>
+  <!-- ✅ Updated Navbar (same as navbar.html) -->
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+
+    <button class="navbar-toggle" id="navbarToggle">&#9776;</button>
+
+    <ul class="navbar-links" id="navbarLinks">
+      
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="section1">
+    <div class="main">
+      <div class="txt">
+        <h2>Breast Cancer Detection</h2>
+        <p>
+          Detect and segment breast cancer tumors from mammogram images using advanced AI. 
+          Our system provides accurate lesion boundaries to assist radiologists in faster 
+          and more reliable diagnosis.
+        </p>
+        <div class="buttons">
+          <button class="button" onclick="window.location.href='/upload'">
+            Test With Sample Image 🖼️
+          </button>
+        </div>
+      </div>
+      <div class="pictures">
+        <div class="img" id="img1"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave Divider -->
+  <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
+    <path fill="#ffffff" fill-opacity="1" d="M0,96L48,101.3C96,107,192,117,288,138.7C384,160,480,192,576,192C672,192,768,160,864,138.7C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"></path>
+  </svg>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-item">
+        <button class="faq-question">What are the early signs of breast cancer?</button>
+        <div class="faq-answer">
+          <p>Early signs include lumps, swelling, skin dimpling, nipple discharge, or pain. Regular screening helps in early detection.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Who should get screened?</button>
+        <div class="faq-answer">
+          <p>Women above 40, those with a family history, or other risk factors should get regular mammograms.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can lifestyle reduce risk?</button>
+        <div class="faq-answer">
+          <p>Yes. Maintaining a healthy weight, regular exercise, reducing alcohol, and a balanced diet can lower risk.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Wave Divider -->
+  <svg class="wave wave-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150">
+    <path fill="#f5f7fa" fill-opacity="1" d="M0,96L48,101.3C96,107,192,117,288,138.7C384,160,480,192,576,192C672,192,768,160,864,138.7C960,117,1056,107,1152,90.7C1248,75,1344,53,1392,42.7L1440,32L1440,150L1392,150C1344,150,1248,150,1152,150C1056,150,960,150,864,150C768,150,672,150,576,150C480,150,384,150,288,150C192,150,96,150,48,150L0,150Z"></path>
+  </svg>
+
+  <!-- Prevention & Recommendations Section -->
+  <section class="prevention-section">
+    <h2 class="section-title">Prevention & Recommendations</h2>
+    <div class="prevention-container">
+      <div class="prevention-item" data-index="0">
+        <div class="prevention-icon">🥦</div>
+        <h3>Healthy Diet</h3>
+      </div>
+      <div class="prevention-item" data-index="1">
+        <div class="prevention-icon">🏃‍♀️</div>
+        <h3>Exercise</h3>
+      </div>
+      <div class="prevention-item" data-index="2">
+        <div class="prevention-icon">❌</div>
+        <h3>Avoid Alcohol & Smoking</h3>
+      </div>
+      <div class="prevention-item" data-index="3">
+        <div class="prevention-icon">🧘‍♀️</div>
+        <h3>Stress Management</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detail Popup -->
+  <div class="prevention-detail">
+    <button class="back-home">← Back</button>
+    <div class="detail-content">
+      <!-- Dynamic content populated by JS -->
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // ✅ Mobile Navbar Toggle (same as navbar.html)
+    const toggleBtn = document.getElementById("navbarToggle");
+    const links = document.getElementById("navbarLinks");
+    let isOpen = false;
+
+    toggleBtn.addEventListener("click", () => {
+      isOpen = !isOpen;
+      links.classList.toggle("show");
+      toggleBtn.innerHTML = isOpen ? "&times;" : "&#9776;";
+    });
+
+    // FAQ toggle
+    const faqs = document.querySelectorAll('.faq-question');
+    faqs.forEach(faq => {
+      faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+        const answer = faq.nextElementSibling;
+        answer.style.maxHeight = answer.style.maxHeight ? null : answer.scrollHeight + "px";
+      });
+    });
+
+    // Prevention popup logic
+    const details = [
+      {
+        title: "Healthy Diet",
+        content: `
+          <p>Consume vegetables, fruits, whole grains, and lean proteins. Limit processed foods.</p>
+          <p>These foods help reduce inflammation, boost immunity, and maintain healthy weight.</p>
+        `
+      },
+      {
+        title: "Exercise",
+        content: `
+          <p>Engage in 30 mins of moderate exercise daily.</p>
+          <p>Helps maintain weight, improves heart health, and reduces stress.</p>
+        `
+      },
+      {
+        title: "Avoid Alcohol & Smoking",
+        content: `
+          <p>Smoking and alcohol increase cancer risk significantly.</p>
+          <p>Avoiding these improves overall health and lowers cancer risk.</p>
+        `
+      },
+      {
+        title: "Stress Management",
+        content: `
+          <p>Practice meditation, yoga, or hobbies to reduce stress.</p>
+          <p>Helps balance hormones and improves mental well-being.</p>
+        `
+      },
+    ];
+
+    const preventionItems = document.querySelectorAll('.prevention-item');
+    const detailPopup = document.querySelector('.prevention-detail');
+    const detailContent = document.querySelector('.detail-content');
+    const backHome = document.querySelector('.back-home');
+
+    preventionItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const index = parseInt(item.dataset.index);
+        detailContent.innerHTML = `<h3>${details[index].title}</h3>${details[index].content}`;
+        detailPopup.style.display = 'flex';
+      });
+    });
+
+    backHome.addEventListener('click', () => {
+      detailPopup.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
+
+
+
+ <!-- Upload.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breast Tumor Detection</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Upload.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Upload Section -->
+  <div class="pest-container">
+    <div class="pest-card">
+      <h2 class="pest-title">IDENTIFY WHETHER BREAST CANCER IS DETECTED OR NOT</h2>
+      <p class="pest-subtitle">Upload a breast ultrasound image.</p>
+
+      <label class="custom-file-upload">
+        <input type="file" id="fileInput" accept="image/*" />
+        Choose File
+      </label>
+      <span id="fileName" class="file-name"></span>
+
+      <div id="imagePreview" class="image-preview" style="display: none;">
+        <img id="previewImg" alt="Preview" />
+      </div>
+
+      <button class="predict-btn" id="predictBtn">Predict</button>
+      <p id="result" class="prediction-result"></p>
+
+      <button id="viewDetailsBtn" class="predict-btn" style="display:none; background-color:#2e7d32;">
+        View Tumor Region
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const BACKEND_URL = "/predict";
+    let selectedFile = null;
+
+    const fileInput = document.getElementById("fileInput");
+    const fileName = document.getElementById("fileName");
+    const imagePreview = document.getElementById("imagePreview");
+    const previewImg = document.getElementById("previewImg");
+    const predictBtn = document.getElementById("predictBtn");
+    const resultText = document.getElementById("result");
+    const viewDetailsBtn = document.getElementById("viewDetailsBtn");
+
+    // --- Preview selected file ---
+    fileInput.addEventListener("change", (e) => {
+      const file = e.target.files[0];
+      if (file) {
+        selectedFile = file;
+        fileName.textContent = file.name;
+        previewImg.src = URL.createObjectURL(file);
+        imagePreview.style.display = "block";
+        resultText.innerText = "";
+        viewDetailsBtn.style.display = "none";
+      }
+    });
+
+    // --- Predict button handler ---
+    predictBtn.addEventListener("click", async () => {
+      if (!selectedFile) {
+        alert("Please upload an image first!");
+        return;
+      }
+
+      resultText.style.color = "#000";
+      resultText.innerText = "🔍 Analyzing... Please wait.";
+
+      const formData = new FormData();
+      formData.append("image", selectedFile);
+
+      try {
+        const res = await fetch(BACKEND_URL, { method: "POST", body: formData });
+        const data = await res.json();
+
+        // Handle invalid image case (non-ultrasound)
+        if (res.status === 400 && data.prediction === "Invalid Image") {
+          alert("⚠️ Invalid image! Please upload a valid breast ultrasound image.");
+          resultText.style.color = "orange";
+          resultText.innerHTML = `<b>❌ Rejected:</b> ${data.description}<br><i>${data.recommendation}</i>`;
+          viewDetailsBtn.style.display = "none";
+          return;
+        }
+
+        // Handle other backend errors
+        if (data.error) {
+          resultText.style.color = "red";
+          resultText.innerText = "❌ Error: " + data.error;
+          return;
+        }
+
+        // Prediction color logic
+        if (data.prediction.includes("Normal")) resultText.style.color = "green";
+        else if (data.prediction.includes("Tumor")) resultText.style.color = "red";
+        else resultText.style.color = "#000";
+
+        // Display formatted result
+        resultText.innerHTML = `
+          <b>🧠 Prediction:</b> ${data.prediction}<br>
+          📊 ${data.description}<br>
+          💡 <b>Recommendation:</b> ${data.recommendation}
+        `;
+
+        // Show overlay (only if tumor found)
+        if (data.is_tumor && data.overlay_image) {
+          sessionStorage.setItem("overlay_image", data.overlay_image);
+          viewDetailsBtn.style.display = "inline-block";
+        } else {
+          viewDetailsBtn.style.display = "none";
+        }
+
+      } catch (error) {
+        console.error(error);
+        resultText.style.color = "red";
+        resultText.innerText = "❌ Failed to connect to the server.";
+      }
+    });
+
+    // --- View details page ---
+    viewDetailsBtn.addEventListener("click", () => {
+      window.open("/details", "_blank");
+    });
+  </script>
+
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+</body>
+</html>
+ 
+
+ <!-- Details.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tumor Region Highlighted</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='details.css') }}">
+</head>
+<body style="text-align:center; margin-top:50px;">
+  <h2>Tumor Region Highlighted</h2>
+  <img id="overlayImg" src="" alt="Tumor Overlay" style="max-width:400px; border:1px solid #ccc;" />
+  <br><br>
+  <button onclick="window.close()">⬅ Back</button>
+
+  <script>
+    const overlayURL = sessionStorage.getItem("overlay_image");
+    if (overlayURL) {
+      document.getElementById("overlayImg").src = overlayURL;
+    } else {
+      document.body.innerHTML += "<p>No overlay available.</p>";
+    }
+  </script>
+</body>
+</html>
+
+<!-- About.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - BreastCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='About.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/about" class="active">About</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/upload">Upload</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- About Project -->
+  <section class="about-section">
+    <div class="container">
+      <h1>About the Project</h1>
+      <p>
+        <b>BreastCare</b> is a deep learning–based web application designed for 
+        <b>early and accurate breast cancer detection</b> using <b>ultrasound images</b>.
+        The system uses a <b>Segmentation-Guided U-Net++ Framework</b> to accurately 
+        locate and classify breast lesions.
+      </p>
+
+      <h2>1️⃣ Segmentation Module</h2>
+      <p>
+        The segmentation stage uses <b>U-Net++</b> to identify and outline tumor regions within ultrasound scans.
+        It produces a <b>binary mask</b> highlighting the exact boundaries of the tumor area.
+        This helps the model focus on the most relevant regions of interest (ROIs) instead of the entire image.
+      </p>
+      <p>
+        The segmentation model achieves a high <b>accuracy of 99.07%</b>, ensuring precise tumor boundary detection
+        even in low-contrast ultrasound conditions. Techniques like skip connections, attention layers, and Dice loss
+        are employed to improve performance.
+      </p>
+
+      <h2>2️⃣ Classification Module</h2>
+      <p>
+        After segmentation, the <b>CNN-based classification model</b> analyzes the localized tumor region
+        to determine whether it is <b>benign</b> or <b>malignant</b>. 
+        This two-stage approach mirrors how radiologists first detect a lesion and then analyze its type.
+      </p>
+      <p>
+        The classification model achieved an overall <b>accuracy of 96.04%</b>. 
+        Grad-CAM heatmaps were also used for <b>explainable AI</b>, visually confirming the model’s focus 
+        on tumor areas during prediction.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dataset Description -->
+  <section class="dataset-section">
+    <div class="container">
+      <h2>About the Dataset (BUSI Dataset)</h2>
+      <p>
+        The <b>Breast Ultrasound Images (BUSI)</b> dataset was collected at 
+        <b>Baheya Hospital for Early Detection and Treatment of Women’s Cancer</b> in Egypt.
+        It contains <b>780 grayscale ultrasound images</b> categorized into three main types:
+        <b>Normal, Benign, and Malignant.</b>
+      </p>
+
+      <table class="dataset-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Image Count</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Normal</b></td>
+            <td>No tumor region, blank mask (healthy tissue)</td>
+            <td>133</td>
+          </tr>
+          <tr>
+            <td><b>Benign</b></td>
+            <td>Non-cancerous lesion with clear boundaries and low irregularity</td>
+            <td>210</td>
+          </tr>
+          <tr>
+            <td><b>Malignant</b></td>
+            <td>Cancerous lesion with irregular shape and blurred edges</td>
+            <td>437</td>
+          </tr>
+          <tr class="total-row">
+            <td><b>Total</b></td>
+            <td>All categories combined</td>
+            <td><b>780</b></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Each image was resized to <b>128×128 pixels</b> and normalized before training.
+        Data augmentation (rotation, flipping, translation, shearing, and zooming) 
+        was applied to enhance model generalization.
+      </p>
+    </div>
+  </section>
+
+  <!-- Dataset Categories with Images -->
+  <section class="dataset-categories">
+    <div class="container">
+
+      <!-- Normal Category -->
+      <div class="category-block">
+        <div class="text-side">
+          <h3>🩶 Normal Images</h3>
+          <p>
+            These ultrasound scans show healthy breast tissue with no tumor presence.
+            Their corresponding segmentation masks are blank (all-zero), 
+            helping the model learn what “normal” looks like.
+          </p>
+        </div>
+        <div class="image-side">
+          <img src="{{ url_for('static', filename='dataset_samples/normal1.png') }}" alt="Normal 1">
+          <img src="{{ url_for('static', filename='dataset_samples/normal2.png') }}" alt="Normal 2">
+          <img src="{{ url_for('static', filename='dataset_samples/normal3.png') }}" alt="Normal 3">
+          <img src="{{ url_for('static', filename='dataset_samples/normal4.png') }}" alt="Normal 4">
+        </div>
+      </div>
+
+      <!-- Benign Category -->
+      <div class="category-block">
+        <div class="text-side">
+          <h3>🩷 Benign Tumor Images</h3>
+          <p>
+            Benign tumors are <b>non-cancerous</b> and usually appear with 
+            smooth boundaries and consistent texture in ultrasound scans. 
+            They are accompanied by binary segmentation masks marking the lesion area.
+          </p>
+        </div>
+        <div class="image-side">
+          <img src="{{ url_for('static', filename='dataset_samples/benign1.png') }}" alt="Benign 1">
+          <img src="{{ url_for('static', filename='dataset_samples/benign2.png') }}" alt="Benign 2">
+          <img src="{{ url_for('static', filename='dataset_samples/benign3.png') }}" alt="Benign 3">
+          <img src="{{ url_for('static', filename='dataset_samples/benign4.png') }}" alt="Benign 4">
+        </div>
+      </div>
+
+      <!-- Malignant Category -->
+      <div class="category-block">
+        <div class="text-side">
+          <h3>❤️ Malignant Tumor Images</h3>
+          <p>
+            Malignant tumors are <b>cancerous</b> and display irregular shapes, 
+            blurred edges, and heterogeneous texture in scans.
+            These images are critical for training the model to detect 
+            life-threatening tumor patterns accurately.
+          </p>
+        </div>
+        <div class="image-side">
+          <img src="{{ url_for('static', filename='dataset_samples/malignant1.png') }}" alt="Malignant 1">
+          <img src="{{ url_for('static', filename='dataset_samples/malignant2.png') }}" alt="Malignant 2">
+          <img src="{{ url_for('static', filename='dataset_samples/malignant3.png') }}" alt="Malignant 3">
+          <img src="{{ url_for('static', filename='dataset_samples/malignant4.png') }}" alt="Malignant 4">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-Powered Breast Cancer Detection System | BUSI Dataset</p>
+  </footer>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fafafa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    h1, h2, h3 {
+      color: #c2185b;
+      text-align: center;
+    }
+
+    .about-section, .dataset-section, .dataset-categories {
+      padding: 50px 10%;
+      line-height: 1.8;
+    }
+
+    .dataset-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .dataset-table th, .dataset-table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+    }
+
+    .dataset-table th {
+      background-color: #c2185b;
+      color: #fff;
+    }
+
+    .dataset-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .total-row {
+      background-color: #ffe4ec;
+      font-weight: bold;
+    }
+
+    /* Category Section */
+    .category-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      margin: 40px 0;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .text-side {
+      flex: 1 1 40%;
+      padding: 20px;
+    }
+
+    .text-side h3 {
+      margin-bottom: 10px;
+    }
+
+    .image-side {
+      flex: 1 1 55%;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .image-side img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .image-side img:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background-color: #222;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</body>
+</html>
+
+
+<!-- Description.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BreastCancer Detection</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #2e7d32;
+    }
+    .confidence {
+      text-align: center;
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    .section h3 {
+      color: #444;
+      border-left: 4px solid #2e7d32;
+      padding-left: 10px;
+    }
+    .section p {
+      color: #333;
+      line-height: 1.5;
+    }
+    .back-btn {
+      display: block;
+      width: 150px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #2e7d32;
+      color: white;
+      text-align: center;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    .back-btn:hover {
+      background: #256428;
+    }
+  </style>
+</head>
+<body>
+  
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/">Features</a></li>
+      <li><a href="/">Reach Us</a></li>
+    </ul>
+  
+    <div class="navbar-buttons">
+      <button class="btn-get-started" id="loginBtn">Login</button>
+    </div>
+    <div class="navbar-buttons">
+      <button class="btn-get-started" id="signupBtn">Sign Up</button>
+    </div>
+  </nav>
+
+  <script>
+    document.getElementById("loginBtn").addEventListener("click", function () {
+      window.location.href = "/login"; // Change to your login page path
+    });
+
+    document.getElementById("signupBtn").addEventListener("click", function () {
+      window.location.href = "/signup"; // Change to your signup page path
+    });
+  </script>
+  <div class="container">
+    <h1 id="pestName">Detection Status</h1>
+    <div class="confidence" id="confidence"></div>
+
+    <div class="section">
+      <h3>Description</h3>
+      <p id="description"></p>
+    </div>
+
+    <div class="section">
+      <h3>Preventive Measures</h3>
+      <p id="prevention"></p>
+    </div>
+
+    <a href="/upload" class="back-btn">🔙 Back</a>
+  </div>
+
+  <script>
+    // Function to get URL query params
+    function getQueryParam(key) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(key) || "";
+    }
+
+    // Fill data from URL
+    document.getElementById("pestName").innerText = getQueryParam("name");
+    document.getElementById("confidence").innerText = "Confidence: " + (parseFloat(getQueryParam("confidence")) * 100).toFixed(2) + "%";
+    document.getElementById("description").innerText = getQueryParam("description");
+    document.getElementById("prevention").innerText = getQueryParam("prevention");
+  </script>
+</body>
+</html>
+
+<!-- Features.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreastCare - Features</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .features-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    .header_subtitle {
+      font-weight: 400;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
+      color: #6b7280;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header_title {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      font-weight: 600;
+      margin: 0.5rem 0 1rem 0;
+      color: rgb(210, 84, 182);
+    }
+
+    .header_description {
+      max-width: 600px;
+      margin: 0 auto 3rem auto;
+      color: #4b5563;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .card_grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 15px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 12px 24px rgba(30, 58, 138, 0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      transition: all 0.4s ease;
+      border-top: 5px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px rgba(30, 58, 138, 0.15);
+    }
+
+    .cyan { border-top-color: #f3c2d5; }
+    .red { border-top-color: #de9ed2; }
+    .blue { border-top-color: #f3c2d5; }
+
+    .card_title {
+      font-weight: 600;
+      font-size: 1.3rem;
+      color: #8a1e5b;
+      margin-bottom: 1rem;
+    }
+
+    .card_content {
+      font-size: 0.95rem;
+      color: #4b5563;
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+      line-height: 1.5;
+    }
+
+    .card_img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(30, 58, 138, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover .card_img {
+      transform: scale(1.05);
+    }
+
+    /* ===== NEW CAROUSEL SECTION ===== */
+    .carousel-section {
+      width: 100%;
+      margin-top: 3rem;
+      background: white;
+      padding: 3rem 0;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      cursor: pointer;
+      border-radius: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-inner img:hover {
+      transform: scale(1.02);
+    }
+
+    .carousel-text {
+      max-width: 900px;
+      margin: 1.5rem auto 0 auto;
+      text-align: center;
+      color: #8a1e5f;
+    }
+
+    .carousel-text h5 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .carousel-text p {
+      font-size: 1rem;
+      color: #4b5563;
+      line-height: 1.7;
+      padding: 0 1rem;
+    }
+
+    /* Carousel Controls */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      background-color: rgba(138, 30, 138, 0.7);
+      border-radius: 50%;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 5%;
+    }
+    
+    .carousel-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding: 1rem 1.5rem;
+      animation: fadeInUp 1.2s ease;
+      margin-bottom: 1.5rem; 
+    }
+
+    .carousel-heading {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 600;
+      background: linear-gradient(90deg, #8a1e7d, #eb25e5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+    }
+
+    .carousel-subtext {
+      color: #4b5563;
+      font-size: 1.05rem;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .footer {
+      width: 100%;
+      background: linear-gradient(90deg, #8a1e66, #eb25c0);
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+  <!-- Carousel Section -->
+  <section class="carousel-section">
+    <!-- ===== Beautiful Section Header ===== -->
+    <div class="carousel-header">
+      <h2 class="carousel-heading">AI Support & Awareness Hub</h2>
+      <p class="carousel-subtext">
+        Empowering patients and clinicians through artificial intelligence — providing guidance,
+        awareness, and global insights for better breast cancer care.
+      </p>
+    </div>
+
+    <div id="awarenessCarousel" class="carousel slide" data-bs-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+         <img src="{{ url_for('static', filename='images/gem4.png') }}" alt="self-examination" onclick="window.location.href='/awareness'">
+          <div class="carousel-text">
+            <h5>Breast Cancer Awareness</h5>
+            <p>
+              Awareness is the first step towards prevention. Learn about regular self-examinations,
+              mammograms, and recognizing early symptoms. Stay informed on ongoing awareness campaigns
+              that empower women through education and timely detection.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="{{ url_for('static', filename='images/gem8.png') }}"alt="Treatment" onclick="window.location.href='/treatments'">
+          <div class="carousel-text">
+            <h5>Treatment & Medication Guidance</h5>
+            <p>
+              Explore detailed insights into various treatment options including surgery, chemotherapy,
+              radiation, and AI-assisted personalized therapies. Understand side effects, recovery plans,
+              and ongoing support programs for patients and families.
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+           <img src="{{ url_for('static', filename='images/gem12.png') }}"alt="Statistics" onclick="window.location.href='/statistics'">
+          <div class="carousel-text">
+            <h5>Global Breast Cancer Statistics</h5>
+            <p>
+              Gain a comprehensive overview of breast cancer trends worldwide.
+              Understand how early detection, awareness, and modern AI-driven methods have improved
+              survival rates and reduced late-stage diagnoses significantly in the last decade.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#awarenessCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#awarenessCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+
+  <!-- Features Section -->
+  <div class="features-container">
+    <p class="header_subtitle">Reliable, efficient detection</p>
+    <h1 class="header_title">Powered by AI Technology</h1>
+    <p class="header_description">
+      Intelligent segmentation helping clinicians focus on what matters most — patient care.
+    </p>
+
+    <div class="card_grid">
+      <a href="{{ url_for('feature_high_accuracy') }}" class="card cyan">
+        <h2 class="card_title">High Accuracy</h2>
+        <p class="card_content">
+          Advanced AI model trained on thousands of breast images ensures precise classification.
+        </p>
+        <img class="card_img" src="https://tse4.mm.bing.net/th/id/OIP.SGlTtWrhmBoGYWaJB0yDggHaGO?pid=Api&P=0&h=220" alt="Accuracy">
+      </a>
+
+      <a href="{{ url_for('feature_fast_processing') }}" class="card red">
+        <h2 class="card_title">Fast Processing</h2>
+        <p class="card_content">
+          Upload an image and get results in seconds, saving critical time in breast cancer detection.
+        </p>
+        <img class="card_img" src="https://tse1.mm.bing.net/th/id/OIP.5a1wh5srO2wgS7wsEcZE-gHaE8?pid=Api&P=0&h=220" alt="Speed">
+      </a>
+
+      <a href="{{ url_for('feature_detailed_insights') }}" class="card blue">
+        <h2 class="card_title">Detailed Insights</h2>
+        <p class="card_content">
+          Get breast cancer descriptions, prevention methods, and recommended treatments instantly.
+        </p>
+        <img class="card_img" src="https://tse3.mm.bing.net/th/id/OIP.QQGA_S9R25lzXpCwSMeT7QHaFH?pid=Api&P=0&h=220" alt="Insights">
+      </a>
+    </div>
+  </div>
+
+    
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!--awareness.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreastCare - Awareness</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fcf8fb, #ffeefc);
+      color: #8a1e6a;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Shapes */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: #f5d2ef;
+      z-index: -1;
+    }
+    body::before {
+      width: 900px;
+      height: 1000px;
+      top: -100px;
+      right: -150px;
+    }
+    body::after {
+      width: 900px;
+      height: 1000px;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    /* ===== HEADER SECTION ===== */
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+     background: url("{{ url_for('static', filename='images/gem16.png') }}")  center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: black;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(181, 116, 172, 0.65);
+      backdrop-filter: blur(1px);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1rem;
+    }
+
+    .header-content h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .header-content p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: black;
+    }
+
+    /* ===== CONTENT SECTIONS ===== */
+    .content-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #8a1e62;
+    }
+
+    .section-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .section-block:nth-child(even) { flex-direction: row-reverse; }
+
+    .section-image {
+      flex: 1 1 45%;
+    }
+
+    .section-image img {
+      width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px #bc5e8e;
+      transition: transform 0.4s ease;
+    }
+
+    .section-image img:hover { transform: scale(1.03); }
+
+    .section-text {
+      flex: 1 1 50%;
+    }
+
+    .section-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #af1e90;
+    }
+
+    .section-text p {
+      color: #513748;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 0.7rem 1.5rem;
+      background: #8a1e59;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #d81da6;
+      transform: translateY(-2px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+  width: 100%;
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+  position: fixed;     /* Keep it at the bottom */
+  bottom: 0;           /* Stick to bottom */
+  left: 0;
+  z-index: 10;         /* Ensure it's above background layers */
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h1>Breast Cancer Awareness</h1>
+      <p>
+        Knowledge saves lives — understand symptoms, take preventive measures, and spread awareness.
+        Together, we can empower women to detect breast cancer early and live healthier lives.
+      </p>
+    </div>
+  </section>
+
+ 
+
+  <!-- Awareness Content -->
+  <div class="content-section">
+    <h2 class="section-title">Learn, Detect, Prevent</h2>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem5.png') }}" alt="self-examination">
+      </div>
+      <div class="section-text">
+        <h3>1️ Early Detection Through Self-Examination</h3>
+        <p>
+          Regular self-examination is one of the simplest yet most powerful tools for early breast cancer
+          detection. Women should perform monthly self-checks and immediately consult a doctor if any
+          unusual changes are noticed in breast size, shape, or skin texture.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem6.png') }}" alt="self-examination">
+      </div>
+      <div class="section-text">
+        <h3>2️ AI-Powered Awareness Campaigns</h3>
+        <p>
+          Our AI-driven education platform personalizes awareness messages for different age groups and
+          risk levels. With data insights, it ensures the right information reaches the right audience — 
+          creating global awareness and saving lives through intelligent outreach.
+        </p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem7.png') }}" alt="self-examination">
+      </div>
+      <div class="section-text">
+        <h3>3️ Community and Support Programs</h3>
+        <p>
+          Local and international organizations conduct awareness drives, free mammogram camps, and
+          survivor mentorship programs. Join a community to share experiences, support others, and
+          stay informed about upcoming awareness events near you.
+        </p>
+      </div>
+    </div>
+  </div>
+   <!-- Back Button -->
+  <div style="text-align:center;">
+    <a href="/features" class="back-btn">⬅ Back</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BreastCare — Empowering Awareness through AI</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!-- treatments.html -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreastCare - Treatments</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fcf8fb, #ffeefc);
+      color: #8a1e6a;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Shapes */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: #f5d2ef;
+      z-index: -1;
+    }
+    body::before {
+      width: 900px;
+      height: 1000px;
+      top: -100px;
+      right: -150px;
+    }
+    body::after {
+      width: 900px;
+      height: 1000px;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    /* ===== HEADER SECTION ===== */
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+     background: url("{{ url_for('static', filename='images/gem16.png') }}")  center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: black;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(181, 116, 172, 0.65);
+      backdrop-filter: blur(1px);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1rem;
+    }
+
+    .header-content h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .header-content p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: black;
+    }
+
+    /* ===== CONTENT SECTIONS ===== */
+    .content-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #8a1e62;
+    }
+
+    .section-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .section-block:nth-child(even) { flex-direction: row-reverse; }
+
+    .section-image {
+      flex: 1 1 45%;
+    }
+
+    .section-image img {
+      width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px #bc5e8e;
+      transition: transform 0.4s ease;
+    }
+
+    .section-image img:hover { transform: scale(1.03); }
+
+    .section-text {
+      flex: 1 1 50%;
+    }
+
+    .section-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #af1e90;
+    }
+
+    .section-text p {
+      color: #513748;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 0.7rem 1.5rem;
+      background: #8a1e59;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #d81da6;
+      transform: translateY(-2px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+  width: 100%;
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+  position: fixed;     /* Keep it at the bottom */
+  bottom: 0;           /* Stick to bottom */
+  left: 0;
+  z-index: 10;         /* Ensure it's above background layers */
+}
+
+  </style>
+</head>
+
+<body>
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <section class="header-section">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h1>Breast Cancer Treatments</h1>
+      <p>Explore the latest treatments and recovery options that bring hope and healing to patients.</p>
+    </div>
+  </section>
+
+  <div class="content-section">
+    <h2 class="section-title">Treatment Options</h2>
+
+    <div class="section-block">
+      <div class="section-image">
+<img src="{{ url_for('static', filename='images/gem9.png') }}" alt="surgery">
+      </div>
+      <div class="section-text">
+        <h3>1️ Surgery</h3>
+        <p>Most breast cancers are treated surgically to remove the tumor. Options include lumpectomy and mastectomy based on cancer stage and spread.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem10.png') }}" alt="Radiation Therapy">
+      </div>
+      <div class="section-text">
+        <h3>2️ Radiation Therapy</h3>
+        <p>High-energy rays destroy remaining cancer cells post-surgery and prevent recurrence, often used alongside other treatments.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+         <img src="{{ url_for('static', filename='images/gem11.png') }}" alt="Chemotherapy">
+      </div>
+      <div class="section-text">
+        <h3>3️ Chemotherapy</h3>
+        <p>Chemotherapy uses anti-cancer drugs to kill fast-growing cancer cells. It can shrink tumors before surgery or prevent relapse afterward.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;">
+    <a href="/features" class="back-btn">⬅ Back</a>
+  </div>
+
+  <footer class="footer">
+    <p>© 2025 BreastCare — Empowering Awareness through AI</p>
+  </footer>
+</body>
+</html>
+
+<!-- statistics.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BreastCare - Statistics</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #fcf8fb, #ffeefc);
+      color: #8a1e6a;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Decorative Background Shapes */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: #f5d2ef;
+      z-index: -1;
+    }
+    body::before {
+      width: 900px;
+      height: 1000px;
+      top: -100px;
+      right: -150px;
+    }
+    body::after {
+      width: 900px;
+      height: 1000px;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    /* ===== HEADER SECTION ===== */
+    .header-section {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+     background: url("{{ url_for('static', filename='images/gem16.png') }}")  center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: black;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(181, 116, 172, 0.65);
+      backdrop-filter: blur(1px);
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 1rem;
+    }
+
+    .header-content h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .header-content p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+      color: black;
+    }
+
+    /* ===== CONTENT SECTIONS ===== */
+    .content-section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1rem;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: #8a1e62;
+    }
+
+    .section-block {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 4rem;
+      gap: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .section-block:nth-child(even) { flex-direction: row-reverse; }
+
+    .section-image {
+      flex: 1 1 45%;
+    }
+
+    .section-image img {
+      width: 80%;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px #bc5e8e;
+      transition: transform 0.4s ease;
+    }
+
+    .section-image img:hover { transform: scale(1.03); }
+
+    .section-text {
+      flex: 1 1 50%;
+    }
+
+    .section-text h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #af1e90;
+    }
+
+    .section-text p {
+      color: #513748;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ===== BACK BUTTON ===== */
+    .back-btn {
+      display: inline-block;
+      margin: 2rem auto;
+      padding: 0.7rem 1.5rem;
+      background: #8a1e59;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .back-btn:hover {
+      background: #d81da6;
+      transform: translateY(-2px);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+  width: 100%;
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: white;
+  text-align: center;
+  padding: 1.2rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+
+  position: fixed;     /* Keep it at the bottom */
+  bottom: 0;           /* Stick to bottom */
+  left: 0;
+  z-index: 10;         /* Ensure it's above background layers */
+}
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" onclick="window.location.href='/'" style="cursor:pointer;">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/login">Login/SignUp</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header Section -->
+  <section class="header-section">
+    <div class="header-overlay"></div>
+    <div class="header-content">
+      <h1>Breast Cancer Statistics</h1>
+      <p>Explore the latest global and regional data on breast cancer incidence, survival, and awareness trends.</p>
+    </div>
+  </section>
+
+  <!-- Statistics Content -->
+  <div class="content-section">
+    <h2 class="section-title">Global & Regional Insights</h2>
+
+    <div class="section-block">
+      <div class="section-image">
+     <img src="{{ url_for('static', filename='images/gem13.png') }}"alt="Global Statistics">
+      </div>
+      <div class="section-text">
+        <h3>1️ Global Incidence</h3>
+        <p>According to WHO, breast cancer accounts for <strong>1 in 4 cancer cases among women</strong> worldwide. Each year, nearly <strong>2.3 million</strong> women are diagnosed, with rising trends in developing countries due to improved detection and lifestyle changes.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem14.png') }}" alt="Regional Comparison">
+      </div>
+      <div class="section-text">
+        <h3>2️ Regional Variations</h3>
+        <p>Developed nations report higher diagnosis rates but also <strong>better survival rates</strong> due to early screening. In contrast, low- and middle-income countries face challenges in awareness and access to healthcare services, leading to late-stage detection.</p>
+      </div>
+    </div>
+
+    <div class="section-block">
+      <div class="section-image">
+        <img src="{{ url_for('static', filename='images/gem15.png') }}" alt="Survival Rates">
+      </div>
+      <div class="section-text">
+        <h3>3️ Survival & Awareness</h3>
+        <p>Early diagnosis and awareness campaigns have significantly improved survival rates. In high-income regions, survival can exceed <strong>85%</strong>, compared to less than <strong>50%</strong> in developing nations — underscoring the importance of screening and education.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back Button -->
+  <div style="text-align:center;">
+    <a href="/features" class="back-btn">⬅ Back</a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 BreastCare — Empowering Awareness through AI</p>
+  </footer>
+</body>
+</html>
+
+<!-- Feature_detailed_insights.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Detailed Insights - BreastCare</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fbf4f8, #f7e8f1);
+  color: #8a1e7d;
+  overflow-x: hidden;
+}
+
+/* ==== Section Layout ==== */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 8%;
+  position: relative;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://svgshare.com/i/15Rn.svg') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+/* ==== Text Section ==== */
+.text {
+  flex: 1;
+  min-width: 320px;
+  padding-right: 2rem;
+  z-index: 2;
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  color: #8a1e5b;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sub-tech {
+  margin-top: 1rem;
+  color: #eb25bd;
+  font-weight: 500;
+}
+
+/* ==== Image Section ==== */
+.image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.image img {
+  width: 90%;
+  max-width: 460px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== Back Button ==== */
+.back-btn {
+  display: inline-block;
+  margin: 3rem auto;
+  background: #ce8bb8;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: #8a1e59;
+}
+
+/* ==== Footer ==== */
+footer {
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .text h1 {
+    font-size: 2.2rem;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+    <span class="logo-icon">🎗️</span> BreastCare
+  </div>
+  <ul class="navbar-links">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/login">Login</a></li>
+  </ul>
+</nav>
+
+<!-- Detailed Insights Section -->
+<section class="section">
+  <div class="text">
+    <h1>Detailed Insights</h1>
+    <p>
+      Beyond detection, BreastCare provides in-depth reports that explain AI decisions, highlight tumor boundaries,
+      and give doctors a clear understanding of confidence scores and region-based features.
+    </p>
+    <p class="sub-tech">🔹 Technologies Used: Explainable AI (Grad-CAM), Feature Visualization, Medical Report Generation</p>
+    <p>
+      The system also suggests possible stages of malignancy, prevention strategies, and references to similar cases,
+      ensuring better patient counseling and follow-up planning.
+    </p>
+  </div>
+
+  <!-- Local Image -->
+  <div class="image">
+    <img src="{{ url_for('static', filename='images/gem3.png') }}" alt="Detailed Insights">
+  </div>
+</section>
+
+<!-- Back Button -->
+<div style="text-align:center;">
+  <a href="{{ url_for('features_page') }}" class="back-btn">← Back to Features</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  © 2025 BreastCare — AI-powered Breast Cancer Detection System
+</footer>
+
+</body>
+</html>
+
+<!-- feature_fast_processing.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Processing - BreastCare</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fbf4f8, #f7e8f1);
+  color: #8a1e7d;
+  overflow-x: hidden;
+}
+
+/* ==== Section Layout ==== */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 8%;
+  position: relative;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://svgshare.com/i/15Rn.svg') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+/* ==== Text Section ==== */
+.text {
+  flex: 1;
+  min-width: 320px;
+  padding-right: 2rem;
+  z-index: 2;
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  color: #8a1e5b;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sub-tech {
+  margin-top: 1rem;
+  color: #eb25bd;
+  font-weight: 500;
+}
+
+/* ==== Image Section ==== */
+.image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.image img {
+  width: 90%;
+  max-width: 460px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== Back Button ==== */
+.back-btn {
+  display: inline-block;
+  margin: 3rem auto;
+  background: #ce8bb8;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: #8a1e59;
+}
+
+/* ==== Footer ==== */
+footer {
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .text h1 {
+    font-size: 2.2rem;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+    <span class="logo-icon">🎗️</span> BreastCare
+  </div>
+  <ul class="navbar-links">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/login">Login</a></li>
+  </ul>
+</nav>
+
+<!-- Fast Processing Section -->
+<section class="section">
+  <div class="text">
+    <h1>Fast Processing</h1>
+    <p>
+      BreastCare ensures lightning-fast diagnostics by processing breast scans in <b>under 2 seconds</b> 
+      using advanced GPU acceleration and optimized deep learning pipelines. 
+      Real-time results empower clinicians to make quick, informed decisions.
+    </p>
+    <p class="sub-tech">🔹 Technologies Used: TensorRT, ONNX Runtime, Model Quantization, Edge AI Deployment</p>
+    <p>
+      The optimized model architecture maintains diagnostic precision while delivering high-speed analysis,
+      enabling large-scale screening and real-time patient feedback.
+    </p>
+  </div>
+
+  <!-- Local Image -->
+  <div class="image">
+    <img src="{{ url_for('static', filename='images/gem2.png') }}" alt="Fast Processing">
+  </div>
+</section>
+
+<!-- Back Button -->
+<div style="text-align:center;">
+  <a href="{{ url_for('features_page') }}" class="back-btn">← Back to Features</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  © 2025 BreastCare — AI-powered Breast Cancer Detection System
+</footer>
+
+</body>
+</html>
+
+<!-- feature_high_accuracy.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>High Accuracy - BreastCare</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(to bottom right, #fbf4f8, #f7e8f1);
+  color: #8a1e7d;
+  overflow-x: hidden;
+}
+
+/* ==== Section Layout ==== */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 5rem 8%;
+  position: relative;
+}
+
+.section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('https://svgshare.com/i/15Rn.svg') no-repeat bottom;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+/* ==== Text Section ==== */
+.text {
+  flex: 1;
+  min-width: 320px;
+  padding-right: 2rem;
+  z-index: 2;
+}
+
+.text h1 {
+  font-size: 2.5rem;
+  color: #8a1e5b;
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1.05rem;
+  color: #374151;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.sub-tech {
+  margin-top: 1rem;
+  color: #eb25bd;
+  font-weight: 500;
+}
+
+/* ==== Image Section ==== */
+.image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.image img {
+  width: 90%;
+  max-width: 460px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+}
+
+.image img:hover {
+  transform: scale(1.05);
+}
+
+/* ==== Back Button ==== */
+.back-btn {
+  display: inline-block;
+  margin: 3rem auto;
+  background: #be2f8f;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+  font-weight: 500;
+}
+
+.back-btn:hover {
+  background: #8a1e59;
+}
+
+/* ==== Footer ==== */
+footer {
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 992px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .text {
+    padding-right: 0;
+    margin-bottom: 2rem;
+  }
+
+  .text h1 {
+    font-size: 2.2rem;
+  }
+
+  .image img {
+    width: 100%;
+    max-width: 400px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+    <span class="logo-icon">🎗️</span> BreastCare
+  </div>
+  <ul class="navbar-links">
+    <li><a href="/home">Home</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/login">Login</a></li>
+  </ul>
+</nav>
+
+<!-- High Accuracy Section -->
+<section class="section">
+  <div class="text">
+    <h1>High Accuracy</h1>
+    <p>
+      Our AI models are trained using deep learning techniques on thousands of annotated breast ultrasound and mammogram images.
+      This ensures diagnostic accuracy of <b>99% </b>that rivals or exceeds human experts, detecting even subtle abnormalities early.
+    </p>
+    <p class="sub-tech">🔹 Technologies Used: CNN, U-Net++, Transfer Learning (ResNet50), Ensemble Voting</p>
+    <p>
+      Through intelligent segmentation and feature extraction, the model achieves consistent and interpretable predictions,
+      minimizing false negatives and improving confidence for clinicians.
+    </p>
+  </div>
+
+  <!-- Local Image -->
+  <div class="image">
+    <img src="{{ url_for('static', filename='images/gem1.png') }}" alt="High Accuracy AI Model">
+  </div>
+</section>
+
+<!-- Back Button -->
+<div style="text-align:center;">
+  <a href="{{ url_for('features_page') }}" class="back-btn">← Back to Features</a>
+</div>
+
+<!-- Footer -->
+<footer>
+  © 2025 BreastCare — AI-powered Breast Cancer Detection System
+</footer>
+
+</body>
+</html>
+
+<!-- Contact.html-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | BreastCare</title>
+
+    <!-- Link your shared styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='Upload.css') }}">
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #f8f9fa;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        padding: 2rem;
+        background-color: #fafafa;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .form {
+        width: 100%;
+        max-width: 820px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+      }
+
+      .contact-form {
+        background-color: #f1c2e3;
+        position: relative;
+      }
+
+      .circle {
+        border-radius: 50%;
+        background: linear-gradient(135deg, transparent 20%, #921477);
+        position: absolute;
+      }
+
+      .circle.one {
+        width: 130px;
+        height: 130px;
+        top: 130px;
+        right: -40px;
+      }
+
+      .circle.two {
+        width: 80px;
+        height: 80px;
+        top: 10px;
+        right: 30px;
+      }
+
+      form {
+        padding: 2.3rem 2.2rem;
+        position: relative;
+        z-index: 10;
+      }
+
+      .title {
+        color: black;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .input-container {
+        position: relative;
+        margin: 1rem 0;
+      }
+
+      .input {
+        width: 100%;
+        border: 2px solid black;
+        background: none;
+        padding: 0.6rem 1.2rem;
+        color: #fff;
+        border-radius: 5px;
+        font-size: 0.95rem;
+        transition: 0.3s;
+      }
+
+      textarea.input {
+        min-height: 120px;
+        resize: none;
+      }
+
+      .input-container label {
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        color: black;
+        font-size: 0.9rem;
+        pointer-events: none;
+        transition: 0.3s;
+      }
+
+      .input:focus + label,
+      .input:not(:placeholder-shown) + label {
+        top: 0;
+        left: 10px;
+        font-size: 0.75rem;
+        background: #fd0d79;
+        padding: 0 4px;
+      }
+
+      .btn {
+        padding: 0.6rem 1.3rem;
+        background-color: #fff;
+        color: #fd0d9d;
+        border: none;
+        font-weight: 600;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      .btn:hover {
+        background: transparent;
+        border: 2px solid #fff;
+        color: #fff;
+      }
+
+      .contact-info {
+        padding: 2.3rem 2.2rem;
+      }
+
+      .contact-info .title {
+        color: #eda2c5;
+      }
+
+      .information {
+        display: flex;
+        align-items: center;
+        margin: 0.7rem 0;
+        color: #555;
+      }
+
+      .information i {
+        color: #eabfd2;
+        margin-right: 0.5rem;
+      }
+
+      .social-icons {
+        display: flex;
+        margin-top: 1rem;
+      }
+
+      .social-icons a {
+        width: 35px;
+        height: 35px;
+        background: linear-gradient(45deg, #fd0db1, #921470);
+        color: black;
+        border-radius: 5px;
+        text-align: center;
+        line-height: 35px;
+        margin-right: 0.5rem;
+        transition: 0.3s;
+      }
+
+      .social-icons a:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 850px) {
+        .form {
+          grid-template-columns: 1fr;
+        }
+      }
+      .footer {
+  width: 100%;
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 500;
+}
+    </style>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div
+        class="navbar-logo"
+        onclick="window.location.href='/'"
+        style="cursor:pointer;"
+      >
+        <span class="logo-icon">🎗️</span> BreastCare
+      </div>
+
+      <button class="navbar-toggle" id="navbarToggle">&#9776;</button>
+
+      <ul class="navbar-links" id="navbarLinks">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/features">Features</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/login">Login/SignUp</a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- Contact Form -->
+    <div class="container">
+      <div class="form">
+        <div class="contact-info">
+          <h3 class="title">Let’s get in touch</h3>
+          <p>Have questions? Reach out and we’ll get back to you soon!</p>
+
+          <div class="information">
+            <i class="fas fa-map-marker-alt"></i>
+            <p>92 Cherry Drive, Uniondale, NY 11553</p>
+          </div>
+          <div class="information">
+            <i class="fas fa-envelope"></i>
+            <p>support@breastcare.ai</p>
+          </div>
+          <div class="information">
+            <i class="fas fa-phone"></i>
+            <p>+1 234 567 890</p>
+          </div>
+
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <span class="circle one"></span>
+          <span class="circle two"></span>
+
+          <form action="#" autocomplete="off">
+            <h3 class="title">Contact Us</h3>
+            <div class="input-container">
+              <input type="text" name="name" class="input" placeholder=" " required />
+              <label>Username</label>
+            </div>
+            <div class="input-container">
+              <input type="email" name="email" class="input" placeholder=" " required />
+              <label>Email</label>
+            </div>
+            <div class="input-container">
+              <input type="tel" name="phone" class="input" placeholder=" " required />
+              <label>Phone</label>
+            </div>
+            <div class="input-container">
+              <textarea name="message" class="input" placeholder=" " required></textarea>
+              <label>Message</label>
+            </div>
+            <input type="submit" value="Send" class="btn" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Navbar toggle
+      const toggleBtn = document.getElementById("navbarToggle");
+      const links = document.getElementById("navbarLinks");
+      let isOpen = false;
+
+      toggleBtn.addEventListener("click", () => {
+        isOpen = !isOpen;
+        links.classList.toggle("show");
+        toggleBtn.innerHTML = isOpen ? "&times;" : "&#9776;";
+      });
+    </script>
+    <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+  </body>
+</html>
+
+<!-- Login.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | BreastCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+    
+  </nav>
+
+  <div class="login-container">
+    <div class="login-card">
+      <h2 class="login-title">Welcome Back 👋</h2>
+      <p class="login-subtitle">Please log in to continue</p>
+
+      <form id="loginForm" onsubmit="return validateLogin(event)">
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required />
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <button type="submit" class="login-btn">Login</button>
+
+        <p class="signup-text">
+  Don’t have an account? <a href="/signup">Sign Up</a>
+</p>
+
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+
+      // Clear previous errors
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+
+      let valid = true;
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      // Email validation
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        valid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Login successful ✅");
+        document.getElementById("loginForm").reset();
+      }
+
+      return false;
+    }
+  </script>
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+</body>
+</html>
+
+<!-- Signup.html-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signup | BreastCare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='signup.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Navbar.css') }}">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-logo" style="cursor:pointer;" onclick="window.location.href='/'">
+      <span class="logo-icon">🎗️</span> BreastCare
+    </div>
+    <ul class="navbar-links">
+        <li><a href="/home">Home</a></li>
+      <li><a href="/features">Features</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="signup-container">
+    <div class="signup-card">
+      <h2 class="signup-title">Create Account 🩺</h2>
+      <p class="signup-subtitle">Sign up to get started</p>
+
+      <form id="signupForm" onsubmit="return validateSignup(event)">
+        <div class="input-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Create a password" required />
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="input-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required />
+          <small class="error" id="confirmPasswordError"></small>
+        </div>
+
+        <button type="submit" class="signup-btn">Sign Up</button>
+
+        <p class="login-text">
+          Already have an account? <a href="/login">Login</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function validateSignup(event) {
+      event.preventDefault();
+
+      // Clear previous errors
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+      document.getElementById("confirmPasswordError").textContent = "";
+
+      let valid = true;
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const confirm = document.getElementById("confirmPassword").value.trim();
+
+      if (name.length < 3) {
+        document.getElementById("nameError").textContent = "Name too short.";
+        valid = false;
+      }
+
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        valid = false;
+      }
+
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters.";
+        valid = false;
+      }
+
+      if (password !== confirm) {
+        document.getElementById("confirmPasswordError").textContent = "Passwords do not match.";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Signup successful 🎉");
+        document.getElementById("signupForm").reset();
+      }
+
+      return false;
+    }
+  </script>
+  <footer class="footer">
+    <p>© 2025 BreastCare — AI-powered Breast Cancer Detection System</p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+  
+
+
+
+
+
+
+
+

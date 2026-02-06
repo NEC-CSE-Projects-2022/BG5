@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* === GLOBAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #ffbce1;
+  color: #e7c4d4;
+  line-height: 1.6;
+}
+
+
+
+/* === HERO SECTION === */
+.section1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 5%;
+  background: #f5f7fa;
+  position: relative;
+  overflow: hidden;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  z-index: 1;
+}
+
+.txt h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #8a1e68, #c87ab0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.txt p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #d49ebd;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button {
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(90deg, #c96ea2, #b86b96);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(30, 58, 138, 0.2);
+}
+
+.button:hover {
+  background: linear-gradient(90deg, #d16eb7, #eb99d5);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* === IMAGE AREA === */
+.pictures {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img {
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  background-image: url("bg1.png");
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.img:hover {
+  transform: scale(1.02);
+}
+
+/* === WAVES === */
+.wave {
+  display: block;
+  width: 100%;
+  height: 120px;
+  background: url("data:image/svg+xml,%3Csvg width='1440' height='120' viewBox='0 0 1440 120' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60C360 120 1080 0 1440 60V120H0V60Z' fill='rgba(30,58,138,0.05)'/%3E%3C/svg%3E") repeat-x;
+  background-size: cover;
+  animation: waveMove 10s linear infinite;
+}
+
+.wave-bottom {
+  transform: rotate(180deg);
+  margin-top: -4px;
+}
+
+@keyframes waveMove {
+  0% { background-position-x: 0; }
+  100% { background-position-x: 1440px; }
+}
+
+/* === FAQ SECTION === */
+.faq-section {
+  background: #f7f9fc;
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #b84094;
+  margin-bottom: 2rem;
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e1cbda;
+  transition: all 0.3s ease;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #8a1e59;
+  border: none;
+  cursor: pointer;
+  background: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.faq-question::after {
+  content: "▼";
+  position: absolute;
+  right: 0;
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  
+}
+
+.faq-question.active::after {
+  transform: rotate(-180deg);
+}
+
+.faq-question:hover {
+  color: #eb25ba;
+}
+
+.faq-answer {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  color: #8a1e5f;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.faq-answer.show {
+  max-height: 500px;
+  padding: 0.5rem 0;
+}
+
+/* === PREVENTION & RECOMMENDATIONS === */
+.prevention-section {
+  background: #ffffff;
+  padding: 4rem 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.prevention-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.prevention-item {
+  background: #faf5f8;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(30, 58, 138, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  cursor: pointer;
+}
+
+.prevention-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(30, 58, 138, 0.15);
+}
+
+.prevention-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #c750a0;
+}
+
+.prevention-item h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #c750a0;
+}
+
+.prevention-item p {
+  font-size: 1rem;
+  color: #eb25ac;
+  line-height: 1.4;
+}
+
+/* === PREVENTION DETAIL POPUP === */
+.prevention-detail {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.prevention-detail .detail-content {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 15px;
+  max-width: 700px;
+  width: 100%;
+  color: #8a1e66;
+  text-align: left;
+}
+
+.prevention-detail .detail-content img {
+  width: 100%;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+.prevention-detail .back-home {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+  background: #bc3b79;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.detail-navigation {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-navigation button {
+  padding: 0.5rem 1rem;
+  background: #8a1e6b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* === FOOTER === */
+.footer {
+  width: 100%;
+  background: linear-gradient(90deg, #8a1e66, #eb25c0);
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* === RESPONSIVE === */
+@media (max-width:1024px){
+  .main{grid-template-columns:1fr;text-align:center;}
+  .txt h2{font-size:2.5rem;}
+  .txt p{font-size:1rem;}
+  .pictures{margin-top:2rem;}
+}
+
+@media (max-width:768px){
+  .navbar-links{display:none; flex-direction:column; gap:1rem; background:#ffffff; position:absolute; top:100%; right:0; width:200px; padding:1rem; box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+  .navbar-links.show{display:flex;}
+  .navbar-toggle{display:block;}
+  .img{max-width:300px;height:300px;}
+  .buttons{flex-direction:column;}
+  .prevention-detail .detail-content{padding:1rem;}
+}
