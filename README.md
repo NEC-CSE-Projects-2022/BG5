@@ -5,7 +5,7 @@
 - 22471A0573 — **Chandana Priya Badina** ( [LinkedIn](https://www.linkedin.com/in/chandana-priya-badina-827b97276/) )
 _Work Done: Model training, evaluation, preprocessing_
 
-- 22471A0574 — **Srilakshmi Bandi** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A0574 — **Srilakshmi Bandi** ( [LinkedIn](https://www.linkedin.com/in/sri-lakshmi-bandi-318b30287/) )
 _Work Done: documentation, Dataset preparation_
 
 - 22471A05A2 — **Sri Varsha Kolisetty** ( [LinkedIn](https://www.linkedin.com/in/sri-varsha1710) )
